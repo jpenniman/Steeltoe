@@ -532,7 +532,7 @@ public sealed class ConfigServerConfigurationProviderTest
         using HttpClient client = server.CreateClient();
 
         // Act
-        var provider = new ConfigServerConfigurationProvider(settings, client, NullLoggerFactory.Instance);
+        _ = new ConfigServerConfigurationProvider(settings, client, NullLoggerFactory.Instance);
 
         // Assert
         Assert.False(TestConfigServerStartup.InitialRequestLatch.Wait(TimeSpan.FromSeconds(2)));
